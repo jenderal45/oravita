@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oravita | Emping Cisono</title>
+
+<style>
+:root {
+  --primary: #1b5e20;
+  --secondary: #f9a825;
+  --light: #f5f7f6;
+  --dark: #222;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+/* NAVBAR */
+header {
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,.05);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.logo span {
+  color: var(--secondary);
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+}
+
+.nav a:hover {
+  color: var(--primary);
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(to right, rgba(27,94,32,.9), rgba(27,94,32,.7)),
+  url('https://images.unsplash.com/photo-1604909052551-4cf0c6bde6b3') center/cover;
+  color: #fff;
+  padding: 120px 20px;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 600px;
+}
+
+.hero .btn {
+  margin-top: 30px;
+  display: inline-block;
+  background: var(--secondary);
+  color: #000;
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* SECTION */
+section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 80px 20px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  font-size: 36px;
+  color: var(--primary);
+}
+
+.section-title p {
+  max-width: 600px;
+  margin: 10px auto;
+}
+
+/* ABOUT */
+.about {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  align-items: center;
+}
+
+.about img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+/* PRODUCT */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.product {
+  background: #fff;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,.05);
+}
+
+.product img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.product h3 {
+  margin: 15px 0 10px;
+}
+
+.product p {
+  font-size: 14px;
+}
+
+.product .btn {
+  margin-top: 15px;
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+}
+
+/* TESTIMONI */
+.testimoni {
+  background: #fff;
+  border-radius: 30px;
+  padding: 60px 40px;
+}
+
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.testi {
+  background: var(--light);
+  padding: 25px;
+  border-radius: 20px;
+}
+
+/* CTA */
+.cta {
+  background: linear-gradient(to right, var(--primary), #2e7d32);
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.cta h2 {
+  font-size: 36px;
+}
+
+.cta p {
+  margin: 15px 0 30px;
+}
+
+.cta a {
+  background: var(--secondary);
+  padding: 15px 35px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #000;
+}
+
+/* FOOTER */
+footer {
+  background: #111;
+  color: #aaa;
+  padding: 40px 20px;
+}
+
+.footer {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+footer h3 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+footer a {
+  color: #aaa;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--secondary);
+}
+
+.copy {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">Oravita<span>.</span></div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#produk">Produk</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Emping Cisono</h1>
+    <p>Camilan tradisional Indonesia dengan rasa gurih alami, renyah, dan berkualitas premium dari Oravita.</p>
+    <a href="#" class="btn">Pesan Sekarang</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-title">
+    <h2>Tentang Oravita</h2>
+    <p>Brand consumer goods yang menghadirkan cita rasa Nusantara dengan kualitas modern.</p>
+  </div>
+  <div class="about">
+    <div>
+      <p>
+        Oravita adalah usaha consumer goods yang berfokus pada produk makanan ringan berkualitas tinggi.
+        Produk unggulan kami, <b>Emping Cisono</b>, dibuat dari melinjo pilihan tanpa bahan pengawet,
+        menghadirkan rasa autentik yang disukai semua kalangan.
+      </p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1604908812180-25d1cb0c6c52" alt="Emping">
+  </div>
+</section>
+
+<section id="produk">
+  <div class="section-title">
+    <h2>Produk Kami</h2>
+  </div>
+
+  <div class="products">
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1587049352850-8d14f4c1c3ad">
+      <h3>Emping Cisono Original</h3>
+      <p>Rasa gurih alami tanpa pengawet.</p>
+      <a href="#" class="btn">Detail</a>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1587049352785-35f1fa1d1e45">
+      <h3>Emping Cisono Pedas</h3>
+      <p>Pedas nikmat, bikin ketagihan.</p>
+      <a href="#" class="btn">Detail</a>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1587049352880-2b9d3a1a1f7e">
+      <h3>Emping Cisono Premium</h3>
+      <p>Kemasan eksklusif untuk hadiah.</p>
+      <a href="#" class="btn">Detail</a>
+    </div>
+  </div>
+</section>
+
+<section class="testimoni">
+  <div class="section-title">
+    <h2>Apa Kata Mereka</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi">
+      “Empingnya renyah dan rasanya autentik. Keluarga suka!”
+      <br><b>- Rina, Jakarta</b>
+    </div>
+    <div class="testi">
+      “Yang pedasnya mantap, cocok buat teman santai.”
+      <br><b>- Denny, Bandung</b>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="kontak">
+  <h2>Ingin Jadi Reseller?</h2>
+  <p>Dapatkan harga khusus dan dukungan promosi.</p>
+  <a href="#">Hubungi Kami</a>
+</section>
+
+<footer>
+  <div class="footer">
+    <div>
+      <h3>Oravita</h3>
+      <p>Consumer Goods dengan rasa Nusantara.</p>
+    </div>
+    <div>
+      <h3>Kontak</h3>
+      <p>Jakarta Selatan</p>
+      <p>Email: info@oravitacorp.id</p>
+    </div>
+    <div>
+      <h3>Sosial Media</h3>
+      <p><a href="#">Instagram</a></p>
+      <p><a href="#">TikTok</a></p>
+    </div>
+  </div>
+  <div class="copy">© 2025 Oravita Corp</div>
+</footer>
+
+</body>
+</html>
