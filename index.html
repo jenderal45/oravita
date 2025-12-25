@@ -135,6 +135,52 @@ section{
   font-size:36px;
   color:var(--primary);
 }
+/* ===== ABOUT SECTION ===== */
+#about{
+  max-width:1200px;
+  margin:auto;
+  padding:80px 20px;
+}
+
+.about{
+  display:flex;
+  align-items:center;
+  gap:40px;
+}
+
+/* TEXT */
+.about p{
+  flex:1;
+  font-size:18px;
+  line-height:1.8;
+}
+
+/* IMAGE */
+.about img{
+  flex:1;
+  max-width:450px;
+  width:100%;
+  height:auto;
+  border-radius:20px;
+  object-fit:cover;
+}
+
+/* ===== TABLET & MOBILE ===== */
+@media (max-width:768px){
+  .about{
+    flex-direction:column-reverse;
+    text-align:center;
+    gap:24px;
+  }
+
+  .about p{
+    font-size:16px;
+  }
+
+  .about img{
+    max-width:100%;
+  }
+}
 
 /* ================= ABOUT ================= */
 .about{
