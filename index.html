@@ -3,348 +3,465 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oravita Global | Emping Cisono</title>
+
+<title>Oravita Global | Consumer Goods</title>
 
 <style>
+
 :root{
-  --primary:#0d47a1;
-  --secondary:#42a5f5;
-  --dark:#1e293b;
-  --light:#f4f8ff;
-  --white:#ffffff;
+--primary:#0f4c81;
+--secondary:#2b7bbb;
+--light:#f4f7fb;
+--dark:#1e293b;
 }
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Segoe UI',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI, sans-serif;
 }
 
 body{
-  background:var(--light);
-  color:var(--dark);
-  line-height:1.7;
+background:var(--light);
+color:var(--dark);
 }
 
 /* NAVBAR */
+
 header{
-  position:sticky;
-  top:0;
-  z-index:999;
-  background:rgba(255,255,255,.95);
-  backdrop-filter:blur(8px);
-  box-shadow:0 4px 30px rgba(0,0,0,.05);
+background:#fff;
+box-shadow:0 4px 20px rgba(0,0,0,.05);
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 .nav{
-  max-width:1200px;
-  margin:auto;
-  padding:15px 20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 20px;
 }
 
-.nav img{
-  height:58px;
+.logo img{
+height:55px;
 }
 
 .nav ul{
-  list-style:none;
-  display:flex;
-  gap:30px;
+display:flex;
+gap:25px;
+list-style:none;
 }
 
 .nav a{
-  text-decoration:none;
-  color:var(--dark);
-  font-weight:600;
+text-decoration:none;
+color:var(--dark);
+font-weight:500;
 }
 
 /* HERO */
-.hero{
-  min-height:90vh;
-  background:
-    linear-gradient(135deg,rgba(13,71,161,.9),rgba(66,165,245,.85)),
-    url('https://images.unsplash.com/photo-1604909052551-4cf0c6bde6b3') center/cover;
-  display:flex;
-  align-items:center;
-  color:#fff;
-}
 
-.hero-content{
-  max-width:1200px;
-  margin:auto;
-  padding:20px;
+.hero{
+background:linear-gradient(135deg,#0f4c81,#2b7bbb);
+color:#fff;
+padding:120px 20px;
+text-align:center;
 }
 
 .hero h1{
-  font-size:56px;
-  font-weight:800;
-  margin-bottom:15px;
+font-size:46px;
+margin-bottom:15px;
 }
 
 .hero p{
-  font-size:20px;
-  max-width:600px;
+font-size:18px;
+max-width:700px;
+margin:auto;
 }
 
-.hero .btn{
-  margin-top:30px;
-}
-
-/* BUTTON */
 .btn{
-  display:inline-block;
-  padding:14px 36px;
-  border-radius:40px;
-  font-weight:700;
-  text-decoration:none;
-  transition:.3s;
+display:inline-block;
+margin-top:25px;
+padding:14px 30px;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
 }
 
 .btn-primary{
-  background:#fff;
-  color:var(--primary);
+background:#fff;
+color:#0f4c81;
 }
 
-.btn-primary:hover{
-  transform:translateY(-3px);
-}
-
-.btn-outline{
-  margin-left:12px;
-  border:2px solid #fff;
-  color:#fff;
+.btn-secondary{
+background:#ffb703;
+color:#000;
+margin-left:10px;
 }
 
 /* SECTION */
+
 section{
-  max-width:1200px;
-  margin:auto;
-  padding:90px 20px;
+max-width:1200px;
+margin:auto;
+padding:80px 20px;
 }
 
 .section-title{
-  text-align:center;
-  margin-bottom:60px;
+text-align:center;
+margin-bottom:50px;
 }
 
 .section-title h2{
-  font-size:38px;
-  color:var(--primary);
+font-size:36px;
+color:var(--primary);
 }
 
 /* ABOUT */
-.about{
-  display:flex;
-  align-items:center;
-  gap:50px;
-}
 
-.about p{
-  flex:1;
-  font-size:18px;
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
 }
 
 .about img{
-  flex:1;
-  max-width:460px;
-  width:100%;
-  border-radius:30px;
-  box-shadow:0 20px 60px rgba(13,71,161,.25);
+width:100%;
+border-radius:20px;
 }
 
-/* PRODUCT */
+/* PRODUCTS */
+
 .products{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:30px;
 }
 
 .product{
-  background:#fff;
-  padding:30px;
-  border-radius:30px;
-  text-align:center;
-  box-shadow:0 15px 50px rgba(0,0,0,.06);
+background:#fff;
+border-radius:18px;
+padding:20px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,.05);
+transition:.3s;
+}
+
+.product:hover{
+transform:translateY(-6px);
 }
 
 .product img{
-  width:100%;
-  height:200px;
-  object-fit:cover;
-  border-radius:20px;
+width:100%;
+height:160px;
+object-fit:cover;
+border-radius:12px;
 }
 
 .product h3{
-  margin:20px 0 10px;
+margin:15px 0;
+font-size:18px;
+}
+
+.product a{
+display:block;
+margin-top:10px;
+padding:10px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+}
+
+.btn-wa{
+background:#25d366;
+color:#fff;
+}
+
+.btn-tokopedia{
+background:#03ac0e;
+color:#fff;
 }
 
 /* VIDEO */
+
 .video-box{
-  position:relative;
-  padding-top:56.25%;
-  border-radius:30px;
-  overflow:hidden;
-  box-shadow:0 20px 60px rgba(0,0,0,.15);
+position:relative;
+padding-top:56.25%;
+border-radius:20px;
+overflow:hidden;
 }
 
 .video-box video{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-/* MARKETPLACE */
-.marketplace{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:40px;
-}
-
-.market{
-  background:#fff;
-  padding:45px 30px;
-  border-radius:35px;
-  text-align:center;
-  box-shadow:0 15px 50px rgba(0,0,0,.06);
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
 }
 
 /* FOOTER */
+
 footer{
-  background:#0b1d3a;
-  color:#cbd5e1;
-  padding:60px 20px;
+background:#0f172a;
+color:#aaa;
+padding:50px 20px;
+margin-top:60px;
 }
 
 .footer{
-  max-width:1200px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
 }
 
 footer h3{
-  color:#fff;
+color:#fff;
+margin-bottom:15px;
 }
 
 .copy{
-  text-align:center;
-  margin-top:40px;
-  font-size:14px;
+text-align:center;
+margin-top:30px;
 }
 
-/* WHATSAPP */
+/* WHATSAPP FLOAT */
+
 .wa-float{
-  position:fixed;
-  bottom:25px;
-  right:25px;
-  background:#25d366;
-  color:#fff;
-  width:60px;
-  height:60px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:28px;
-  text-decoration:none;
-  box-shadow:0 8px 25px rgba(0,0,0,.3);
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25d366;
+color:#fff;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+text-decoration:none;
+box-shadow:0 8px 20px rgba(0,0,0,.3);
 }
 
 /* MOBILE */
+
 @media(max-width:768px){
-  .hero h1{font-size:38px;}
-  .about{flex-direction:column-reverse;text-align:center;}
-  .nav ul{display:none;}
+
+.nav ul{
+display:none;
 }
+
+.hero h1{
+font-size:32px;
+}
+
+.about{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+}
+
 </style>
 </head>
 
+
 <body>
 
+
 <header>
-  <div class="nav">
-    <img src="https://raw.githubusercontent.com/jenderal45/oravita/main/img/2-removebg-preview.png">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#about">Tentang</a></li>
-      <li><a href="#produk">Produk</a></li>
-      <li><a href="#marketplace">Marketplace</a></li>
-    </ul>
-  </div>
+
+<div class="nav">
+
+<div class="logo">
+<img src="https://raw.githubusercontent.com/jenderal45/oravita/main/img/2-removebg-preview.png">
+</div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#about">Tentang</a></li>
+<li><a href="#produk">Produk</a></li>
+<li><a href="#video">Video</a></li>
+</ul>
+
+</div>
+
 </header>
 
+
 <section class="hero">
-  <div class="hero-content">
-    <h1>Emping Cisono</h1>
-    <p>Camilan Nusantara premium dari melinjo pilihan, diproses higienis dengan cita rasa autentik.</p>
-    <a href="https://setoko.co/oravitacorp" class="btn btn-primary">Beli di Setoko</a>
-    <a href="https://tk.tokopedia.com/ZSPkjhWEq/" class="btn btn-outline">Tokopedia</a>
-  </div>
+
+<h1>Oravita Global</h1>
+
+<p>
+Brand consumer goods yang menghadirkan produk pangan berkualitas
+untuk keluarga Indonesia.
+</p>
+
+<a href="#produk" class="btn btn-primary">Lihat Produk</a>
+
+<a href="https://tk.tokopedia.com/ZSPkjhWEq/" class="btn btn-secondary">Tokopedia Store</a>
+
 </section>
+
 
 <section id="about">
-  <div class="section-title"><h2>Tentang Oravita</h2></div>
-  <div class="about">
-    <p>
-      <b>Oravita Global</b> adalah brand consumer goods yang menghadirkan Emping Cisono
-      sebagai produk unggulan dengan standar kualitas tinggi dan rasa khas Indonesia.
-    </p>
-    <img src="https://raw.githubusercontent.com/jenderal45/oravita/main/img/5a51d231140b4b3eb8d9fe17b4172924~tplv-aphluv4xwc-resize-webp_800_800.webp">
-  </div>
+
+<div class="section-title">
+<h2>Tentang Oravita</h2>
+</div>
+
+<div class="about">
+
+<div>
+
+<p>
+
+Oravita Global adalah brand consumer goods yang menghadirkan produk
+pangan berkualitas seperti emping melinjo, beras, minyak goreng,
+dan kebutuhan dapur lainnya.
+
+</p>
+
+</div>
+
+<img src="https://raw.githubusercontent.com/jenderal45/oravita/main/img/5a51d231140b4b3eb8d9fe17b4172924~tplv-aphluv4xwc-resize-webp_800_800.webp">
+
+</div>
+
 </section>
+
 
 <section id="produk">
-  <div class="section-title"><h2>Produk Unggulan</h2></div>
-  <div class="products">
-    <div class="product">
-      <img src="https://raw.githubusercontent.com/jenderal45/oravita/main/img/5a51d231140b4b3eb8d9fe17b4172924~tplv-aphluv4xwc-resize-webp_800_800.webp">
-      <h3>Emping Cisono 200 Gram</h3>
-      <a href="https://tk.tokopedia.com/ZSPkjhWEq/" class="btn btn-primary">Beli Sekarang</a>
-    </div>
-  </div>
+
+<div class="section-title">
+<h2>Produk Oravita</h2>
+</div>
+
+
+<div class="products">
+
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1604908812180-25d1cb0c6c52">
+<h3>Emping Cisono</h3>
+<a href="https://wa.me/6289652435067" class="btn-wa">Order WhatsApp</a>
+<a href="https://tk.tokopedia.com/ZSPkjhWEq/" class="btn-tokopedia">Tokopedia</a>
+</div>
+
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc">
+<h3>Susu Indomilk 125ml</h3>
+<a href="https://wa.me/6289652435067" class="btn-wa">Order WhatsApp</a>
+</div>
+
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1586201375761-83865001e31c">
+<h3>Minyak Kita 1L</h3>
+<a href="https://wa.me/6289652435067" class="btn-wa">Order WhatsApp</a>
+</div>
+
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1586201375761-83865001e31c">
+<h3>Beras Premium</h3>
+<a href="https://wa.me/6289652435067" class="btn-wa">Order WhatsApp</a>
+</div>
+
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1569288063648-5d9c0c5d6c1f">
+<h3>Telur Ayam</h3>
+<a href="https://wa.me/6289652435067" class="btn-wa">Order WhatsApp</a>
+</div>
+
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1604908176997-4316c288032b">
+<h3>Ayam Potong</h3>
+<a href="https://wa.me/6289652435067" class="btn-wa">Order WhatsApp</a>
+</div>
+
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1542838132-92c53300491e">
+<h3>Sayur Sayuran</h3>
+<a href="https://wa.me/6289652435067" class="btn-wa">Order WhatsApp</a>
+</div>
+
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1574226516831-e1dff420e42e">
+<h3>Buah Buahan</h3>
+<a href="https://wa.me/6289652435067" class="btn-wa">Order WhatsApp</a>
+</div>
+
+
+</div>
+
 </section>
 
-<section>
-  <div class="section-title"><h2>Video Produk</h2></div>
-  <div class="video-box">
-    <video controls muted autoplay loop playsinline>
-      <source src="https://jenderal45.github.io/oravita/source/WhatsApp%20Video%202025-12-26%20at%2000.57.08.mp4" type="video/mp4">
-    </video>
-  </div>
+
+<section id="video">
+
+<div class="section-title">
+<h2>Video Produk</h2>
+</div>
+
+<div class="video-box">
+
+<video controls autoplay muted loop>
+
+<source src="https://jenderal45.github.io/oravita/source/WhatsApp%20Video%202025-12-26%20at%2000.57.08.mp4" type="video/mp4">
+
+</video>
+
+</div>
+
 </section>
 
-<section id="marketplace">
-  <div class="section-title"><h2>Marketplace Resmi</h2></div>
-  <div class="marketplace">
-    <div class="market">
-      <h3>Setoko Official</h3>
-      <a href="https://setoko.co/oravitacorp" class="btn btn-primary">Kunjungi</a>
-    </div>
-    <div class="market">
-      <h3>Tokopedia Official</h3>
-      <a href="https://tk.tokopedia.com/ZSPkjhWEq/" class="btn btn-primary">Kunjungi</a>
-    </div>
-  </div>
-</section>
 
 <footer>
-  <div class="footer">
-    <div>
-      <h3>Oravita Global</h3>
-      <p>Emping Cisono – Rasa Khas Nusantara Premium</p>
-    </div>
-  </div>
-  <div class="copy">© 2025 Oravita Global</div>
+
+<div class="footer">
+
+<div>
+
+<h3>Oravita Global</h3>
+
+<p>Brand Consumer Goods Indonesia</p>
+
+</div>
+
+
+<div>
+
+<h3>Marketplace</h3>
+
+<p><a href="https://tk.tokopedia.com/ZSPkjhWEq/">Tokopedia Store</a></p>
+
+</div>
+
+</div>
+
+<div class="copy">
+© 2025 Oravita Global
+</div>
+
 </footer>
 
+
 <a href="https://wa.me/6289652435067" class="wa-float">💬</a>
+
 
 </body>
 </html>
