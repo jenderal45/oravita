@@ -2,270 +2,265 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Oravita Global | Consumer Goods Indonesia</title>
+<title>Oravita Group | Distribution & Supplier</title>
 
-<meta name="description" content="Oravita Global adalah brand consumer goods Indonesia yang menghadirkan produk pangan berkualitas untuk keluarga Indonesia.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-:root{
---primary:#0f4c81;
---secondary:#2b7bbb;
---accent:#ffb703;
---dark:#0f172a;
---light:#f5f8fc;
---text:#334155;
-}
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Segoe UI,Roboto,Arial,sans-serif;
+font-family:Poppins,sans-serif;
 }
 
 body{
-background:var(--light);
-color:var(--text);
-line-height:1.6;
+background:#ffffff;
+color:#1a1a1a;
 }
 
 /* NAVBAR */
 
-header{
-background:#fff;
-box-shadow:0 4px 25px rgba(0,0,0,.08);
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 60px;
+background:#ffffff;
+border-bottom:1px solid #eee;
 position:sticky;
 top:0;
 z-index:999;
 }
 
-.nav{
-max-width:1250px;
-margin:auto;
+.logo{
+font-weight:700;
+font-size:22px;
+color:#0b5ed7;
+}
+
+.nav-links{
 display:flex;
-align-items:center;
-justify-content:space-between;
-padding:15px 20px;
+gap:35px;
 }
 
-.logo img{
-height:50px;
-}
-
-.nav ul{
-display:flex;
-gap:28px;
-list-style:none;
-}
-
-.nav a{
+.nav-links a{
 text-decoration:none;
-font-weight:600;
-color:var(--dark);
+color:#333;
+font-weight:500;
 }
 
-.menu-toggle{
-display:none;
-font-size:26px;
-cursor:pointer;
+.nav-links a:hover{
+color:#0b5ed7;
 }
 
 /* HERO */
 
 .hero{
-background:linear-gradient(120deg,#0f4c81,#2b7bbb);
-color:#fff;
-padding:130px 20px;
-text-align:center;
+height:80vh;
+display:flex;
+align-items:center;
+padding:0 60px;
+background:linear-gradient(120deg,#f7f9fc,#eef2f7);
+}
+
+.hero-text{
+max-width:600px;
 }
 
 .hero h1{
-font-size:52px;
-margin-bottom:15px;
+font-size:46px;
+margin-bottom:20px;
 }
 
 .hero p{
-max-width:700px;
-margin:auto;
-font-size:18px;
-opacity:.9;
-}
-
-.hero-btn{
-margin-top:30px;
+color:#666;
+line-height:1.6;
+margin-bottom:25px;
 }
 
 .btn{
-padding:14px 32px;
-border-radius:30px;
-font-weight:600;
+padding:14px 28px;
+background:#0b5ed7;
+color:#fff;
+border-radius:6px;
 text-decoration:none;
-display:inline-block;
-margin:5px;
+font-weight:500;
 }
 
-.btn-white{
-background:#fff;
-color:var(--primary);
+.hero-img img{
+width:450px;
+border-radius:12px;
 }
 
-.btn-accent{
-background:var(--accent);
-color:#000;
-}
-
-/* SECTION */
-
-section{
-max-width:1200px;
-margin:auto;
-padding:80px 20px;
-}
-
-.section-title{
-text-align:center;
-margin-bottom:50px;
-}
-
-.section-title h2{
-font-size:38px;
-color:var(--primary);
+.hero-wrapper{
+display:flex;
+justify-content:space-between;
+align-items:center;
+width:100%;
 }
 
 /* ABOUT */
 
 .about{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
-align-items:center;
+padding:90px 60px;
+background:#fff;
 }
 
-.about img{
-width:100%;
-border-radius:18px;
+.section-title{
+font-size:32px;
+margin-bottom:25px;
+}
+
+.about p{
+max-width:900px;
+line-height:1.7;
+color:#555;
 }
 
 /* PRODUCTS */
 
 .products{
+padding:90px 60px;
+background:#f7f9fc;
+}
+
+.product-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:28px;
+gap:35px;
+margin-top:40px;
 }
 
-.product{
+.product-card{
 background:#fff;
-border-radius:18px;
+border-radius:10px;
 padding:20px;
-text-align:center;
-box-shadow:0 12px 25px rgba(0,0,0,.06);
-transition:.3s;
+box-shadow:0 8px 20px rgba(0,0,0,0.05);
+transition:0.3s;
 }
 
-.product:hover{
-transform:translateY(-6px);
+.product-card:hover{
+transform:translateY(-5px);
 }
 
-.product img{
+.product-card img{
 width:100%;
-height:170px;
+height:200px;
 object-fit:cover;
-border-radius:12px;
-}
-
-.product h3{
-margin:14px 0;
-}
-
-.product a{
-display:block;
-margin-top:8px;
-padding:10px;
 border-radius:8px;
-font-weight:600;
-text-decoration:none;
+margin-bottom:15px;
 }
 
-.btn-wa{
-background:#25d366;
-color:#fff;
+.product-card h3{
+font-size:18px;
+margin-bottom:8px;
 }
 
-.btn-market{
-background:#03ac0e;
-color:#fff;
+.product-card p{
+font-size:14px;
+color:#666;
 }
 
 /* DISTRIBUTION */
 
 .distribution{
+padding:90px 60px;
+background:#fff;
+}
+
+.dist-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:40px;
+margin-top:40px;
+}
+
+.dist-box{
+background:#f7f9fc;
+padding:30px;
+border-radius:10px;
+}
+
+/* INSTAGRAM */
+
+.instagram{
+padding:90px 60px;
+background:#f7f9fc;
 text-align:center;
 }
 
-.dist-card{
-background:#fff;
-padding:30px;
-border-radius:18px;
-box-shadow:0 10px 25px rgba(0,0,0,.05);
+.instagram a{
+display:inline-block;
+margin-top:20px;
+background:#e1306c;
+color:white;
+padding:14px 28px;
+border-radius:6px;
+text-decoration:none;
 }
 
 /* CONTACT */
 
 .contact{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
+padding:90px 60px;
 }
 
-.contact form{
-display:flex;
-flex-direction:column;
-gap:15px;
+.contact-box{
+max-width:600px;
 }
 
 .contact input,
 .contact textarea{
+width:100%;
 padding:14px;
-border-radius:8px;
+margin-top:10px;
 border:1px solid #ddd;
+border-radius:6px;
 }
 
 .contact button{
-padding:14px;
+margin-top:20px;
+padding:14px 28px;
 border:none;
-background:var(--primary);
-color:#fff;
-border-radius:8px;
-font-weight:600;
+background:#0b5ed7;
+color:white;
+border-radius:6px;
 cursor:pointer;
 }
 
 /* FOOTER */
 
 footer{
-background:var(--dark);
-color:#aaa;
-padding:60px 20px;
+background:#0b1220;
+color:#bbb;
+padding:40px 60px;
+margin-top:60px;
 }
 
-.footer{
-max-width:1200px;
-margin:auto;
+.footer-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:30px;
 }
 
-footer h3{
+footer h4{
 color:#fff;
 margin-bottom:15px;
+}
+
+footer a{
+display:block;
+color:#bbb;
+text-decoration:none;
+margin-bottom:6px;
+}
+
+footer a:hover{
+color:#fff;
 }
 
 .copy{
@@ -274,59 +269,32 @@ margin-top:30px;
 font-size:14px;
 }
 
-/* WHATSAPP FLOAT */
+@media(max-width:900px){
 
-.wa{
-position:fixed;
-bottom:25px;
-right:25px;
-width:60px;
-height:60px;
-background:#25d366;
-color:#fff;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-font-size:28px;
-text-decoration:none;
-box-shadow:0 8px 25px rgba(0,0,0,.3);
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.nav ul{
-display:none;
+.hero-wrapper{
 flex-direction:column;
-background:#fff;
-position:absolute;
-top:70px;
-right:20px;
-padding:20px;
-border-radius:10px;
-box-shadow:0 10px 20px rgba(0,0,0,.1);
+text-align:center;
+gap:30px;
 }
 
-.nav ul.active{
-display:flex;
+.hero-img img{
+width:100%;
 }
 
-.menu-toggle{
-display:block;
+.navbar{
+padding:18px 30px;
 }
 
-.hero h1{
-font-size:34px;
+.hero{
+padding:0 30px;
 }
 
-.about{
-grid-template-columns:1fr;
-}
-
-.contact{
-grid-template-columns:1fr;
+.products,
+.about,
+.distribution,
+.contact,
+.instagram{
+padding:70px 30px;
 }
 
 }
@@ -336,214 +304,228 @@ grid-template-columns:1fr;
 
 <body>
 
-<header>
+<!-- NAVBAR -->
 
-<div class="nav">
+<div class="navbar">
 
-<div class="logo">
-<img src="https://raw.githubusercontent.com/jenderal45/oravita/main/img/2-removebg-preview.png">
+<div class="logo">Oravita Group</div>
+
+<div class="nav-links">
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#products">Products</a>
+<a href="#distribution">Distribution</a>
+<a href="#contact">Contact</a>
 </div>
-
-<div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-<ul id="menu">
-<li><a href="#">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#products">Products</a></li>
-<li><a href="#distribution">Distribution</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
 
 </div>
 
-</header>
-
+<!-- HERO -->
 
 <section class="hero">
 
-<h1>Oravita</h1>
+<div class="hero-wrapper">
+
+<div class="hero-text">
+
+<h1>Food Distribution & Consumer Goods</h1>
 
 <p>
-Brand Consumer Goods Indonesia yang menghadirkan produk pangan
-berkualitas untuk keluarga Indonesia.
+Oravita Global merupakan perusahaan distribusi bahan pangan
+dan produk consumer goods yang menyediakan kebutuhan
+pokok berkualitas untuk masyarakat dan mitra bisnis di Indonesia.
 </p>
 
-<div class="hero-btn">
+<a class="btn" href="#products">Explore Products</a>
 
-<a href="#products" class="btn btn-white">Explore Products</a>
+</div>
 
-<a href="https://tk.tokopedia.com/ZSPkjhWEq/" class="btn btn-accent">
-Marketplace Store
+<div class="hero-img">
+<img src="https://images.unsplash.com/photo-1542838132-92c53300491e">
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<h2 class="section-title">About Oravita Global</h2>
+
+<p>
+
+Oravita Global adalah perusahaan yang bergerak di bidang
+distribusi produk pangan dan kebutuhan pokok.
+Kami berkomitmen menyediakan produk berkualitas
+dengan sistem distribusi yang efisien untuk memenuhi
+kebutuhan masyarakat, retail, dan mitra usaha.
+
+Produk yang kami distribusikan meliputi susu, minyak goreng,
+beras, telur ayam, ayam potong, sayuran segar,
+dan buah-buahan dengan standar kualitas terbaik.
+
+</p>
+
+</section>
+
+<!-- PRODUCTS -->
+
+<section class="products" id="products">
+
+<h2 class="section-title">Our Products</h2>
+
+<div class="product-grid">
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074">
+<h3>Indomilk 125ml</h3>
+<p>Susu siap minum dengan kualitas terbaik untuk kebutuhan nutrisi harian.</p>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1604908176997-4316c288032b">
+<h3>Minyak Kita 1L</h3>
+<p>Minyak goreng berkualitas untuk kebutuhan rumah tangga dan usaha kuliner.</p>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1586201375761-83865001e31c">
+<h3>Beras</h3>
+<p>Beras pilihan dengan kualitas premium untuk kebutuhan konsumsi harian.</p>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1518492104633-130d0cc84637">
+<h3>Telur Ayam</h3>
+<p>Telur ayam segar dari peternakan terpercaya.</p>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1604503468506-a8da13d82791">
+<h3>Ayam Potong</h3>
+<p>Daging ayam segar dengan kualitas terbaik untuk konsumsi keluarga.</p>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1540420773420-3366772f4999">
+<h3>Sayur-Sayuran</h3>
+<p>Sayuran segar langsung dari petani pilihan.</p>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1574226516831-e1dff420e42e">
+<h3>Buah-Buahan</h3>
+<p>Buah segar berkualitas untuk pasar retail dan distribusi.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- DISTRIBUTION -->
+
+<section class="distribution" id="distribution">
+
+<h2 class="section-title">Distribution Network</h2>
+
+<div class="dist-grid">
+
+<div class="dist-box">
+<h3>Retail & Grocery</h3>
+<p>
+Kami melayani distribusi untuk toko retail,
+grocery store, dan supermarket dengan sistem supply yang stabil.
+</p>
+</div>
+
+<div class="dist-box">
+<h3>Restaurant & Culinary</h3>
+<p>
+Produk kami juga disuplai untuk restoran,
+usaha kuliner, dan industri makanan.
+</p>
+</div>
+
+<div class="dist-box">
+<h3>Wholesale Partner</h3>
+<p>
+Kami membuka kerjasama distribusi dengan
+mitra grosir dan distributor regional.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- INSTAGRAM -->
+
+<section class="instagram">
+
+<h2 class="section-title">Follow Our Instagram</h2>
+
+<p>Update terbaru produk dan aktivitas Oravita Global.</p>
+
+<a href="https://www.instagram.com/oravitagroup?igsh=eGJlcmtvZTZjazNm" target="_blank">
+Visit Instagram
 </a>
 
-</div>
-
 </section>
 
+<!-- CONTACT -->
 
-<section id="about">
+<section class="contact" id="contact">
 
-<div class="section-title">
-<h2>Tentang Oravita</h2>
-</div>
+<h2 class="section-title">Contact Us</h2>
 
-<div class="about">
-
-<div>
-
-<p>
-Oravita adalah brand consumer goods yang menghadirkan berbagai
-produk pangan berkualitas mulai dari beras, minyak goreng hingga bahan
-kebutuhan dapur lainnya.
-</p>
-
-<br>
-
-<p>
-Kami berkomitmen menyediakan produk yang berkualitas, aman dan
-terjangkau untuk masyarakat Indonesia melalui jaringan distribusi
-yang luas dan platform digital marketplace.
-</p>
-
-</div>
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Rice_Grains.jpg">
-
-</div>
-
-</section>
-
-
-<section id="products">
-
-<div class="section-title">
-<h2>Produk Kami</h2>
-</div>
-
-<div class="products">
-
-<div class="product">
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Rice_Grains.jpg">
-<h3>Beras Premium</h3>
-<a href="https://wa.me/6289652435067" class="btn-wa">Order WhatsApp</a>
-</div>
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1604908176997-4316c288032b">
-<h3>Minyak Goreng</h3>
-<a href="https://wa.me/6289652435067" class="btn-wa">Order WhatsApp</a>
-</div>
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1574226516831-e1dff420e42e">
-<h3>Buah Segar</h3>
-<a href="https://wa.me/6289652435067" class="btn-wa">Order WhatsApp</a>
-</div>
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1542838132-92c53300491e">
-<h3>Sayur Segar</h3>
-<a href="https://wa.me/6289652435067" class="btn-wa">Order WhatsApp</a>
-</div>
-
-</div>
-
-</section>
-
-
-<section id="distribution">
-
-<div class="section-title">
-<h2>Distribusi</h2>
-</div>
-
-<div class="distribution">
-
-<div class="dist-card">
-<h3>Retail</h3>
-<p>Produk tersedia di berbagai toko dan reseller.</p>
-</div>
-
-<div class="dist-card">
-<h3>Marketplace</h3>
-<p>Tersedia di Tokopedia dan marketplace lainnya.</p>
-</div>
-
-<div class="dist-card">
-<h3>Direct Sales</h3>
-<p>Pemesanan langsung melalui WhatsApp resmi.</p>
-</div>
-
-</div>
-
-</section>
-
-
-<section id="contact">
-
-<div class="section-title">
-<h2>Contact Us</h2>
-</div>
-
-<div class="contact">
-
-<div>
-
-<h3>Oravita</h3>
-
-<p>Email: info@oravita.co.id</p>
-<p>WhatsApp: +62 896 5243 5067</p>
-
-</div>
-
-<form>
+<div class="contact-box">
 
 <input type="text" placeholder="Nama">
+
 <input type="email" placeholder="Email">
+
 <textarea rows="5" placeholder="Pesan"></textarea>
 
 <button>Kirim Pesan</button>
 
-</form>
-
 </div>
 
 </section>
 
+<!-- FOOTER -->
 
 <footer>
 
-<div class="footer">
+<div class="footer-grid">
 
 <div>
-<h3>Oravita</h3>
-<p>Consumer Goods Indonesia</p>
+<h4>Oravita Global</h4>
+<p>
+Food Distribution & Consumer Goods
+</p>
 </div>
 
 <div>
-<h3>Marketplace</h3>
-<p>Tokopedia Store</p>
+<h4>Company</h4>
+<a href="#">About</a>
+<a href="#">Products</a>
+<a href="#">Distribution</a>
+</div>
+
+<div>
+<h4>Social</h4>
+<a href="https://www.instagram.com/oravitagroup?igsh=eGJlcmtvZTZjazNm">Instagram</a>
 </div>
 
 </div>
 
 <div class="copy">
-© 2025 Oravita | Member of Oravita Group
+© 2026 Oravita Group member of Astria. All rights reserved.
 </div>
 
 </footer>
-
-
-<a href="https://wa.me/6289652435067" class="wa">💬</a>
-
-
-<script>
-
-function toggleMenu(){
-document.getElementById("menu").classList.toggle("active");
-}
-
-</script>
 
 </body>
 </html>
