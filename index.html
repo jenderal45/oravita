@@ -3,536 +3,1786 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Oravita Group | Distribution & Supplier</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+<title>Oravita Group | Premium Food Distribution</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+:root{
+--primary:#0f172a;
+--primary-light:#1e293b;
+--accent:#059669;
+--accent-light:#10b981;
+--text:#0f172a;
+--text-secondary:#64748b;
+--bg:#ffffff;
+--bg-secondary:#f8fafc;
+--bg-tertiary:#f1f5f9;
+--border:#e2e8f0;
+--shadow-sm:0 1px 2px 0 rgb(0 0 0 / 0.05);
+--shadow:0 4px 6px -1px rgb(0 0 0 / 0.1),0 2px 4px -2px rgb(0 0 0 / 0.1);
+--shadow-lg:0 10px 15px -3px rgb(0 0 0 / 0.1),0 4px 6px -4px rgb(0 0 0 / 0.1);
+--shadow-xl:0 20px 25px -5px rgb(0 0 0 / 0.1),0 8px 10px -6px rgb(0 0 0 / 0.1);
+--ease-out:cubic-bezier(0.16,1,0.3,1);
+--ease-spring:cubic-bezier(0.34,1.56,0.64,1);
+}
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Poppins,sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
-background:#ffffff;
-color:#1a1a1a;
+font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+background:var(--bg);
+color:var(--text);
+line-height:1.6;
+-webkit-font-smoothing:antialiased;
+-moz-osx-font-smoothing:grayscale;
+overflow-x:hidden;
 }
 
-/* NAVBAR */
+/* Typography */
+h1,h2,h3,h4{
+font-family:'Inter',sans-serif;
+letter-spacing:-0.02em;
+line-height:1.2;
+}
 
+.display{
+font-family:'Playfair Display',serif;
+font-weight:500;
+letter-spacing:-0.03em;
+}
+
+/* Navigation */
 .navbar{
+position:fixed;
+top:0;
+left:0;
+right:0;
+z-index:1000;
+padding:1.25rem 2rem;
+background:rgba(255,255,255,0.8);
+backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);
+border-bottom:1px solid rgba(226,232,240,0.6);
+transition:all 0.3s var(--ease-out);
+}
+
+.navbar.scrolled{
+padding:0.875rem 2rem;
+background:rgba(255,255,255,0.95);
+box-shadow:var(--shadow-sm);
+}
+
+.nav-container{
+max-width:1400px;
+margin:0 auto;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 60px;
-background:#ffffff;
-border-bottom:1px solid #eee;
-position:sticky;
-top:0;
-z-index:999;
 }
 
 .logo{
+display:flex;
+align-items:center;
+gap:0.75rem;
 font-weight:700;
-font-size:22px;
-color:#0b5ed7;
+font-size:1.25rem;
+color:var(--primary);
+text-decoration:none;
+transition:transform 0.3s var(--ease-spring);
+}
+
+.logo:hover{
+transform:scale(1.02);
 }
 
 .logo img{
-height:42px;
+height:40px;
 width:auto;
+object-fit:contain;
 }
 
 .nav-links{
 display:flex;
-gap:35px;
+align-items:center;
+gap:2.5rem;
+list-style:none;
 }
 
 .nav-links a{
 text-decoration:none;
-color:#333;
+color:var(--text-secondary);
 font-weight:500;
+font-size:0.9375rem;
+position:relative;
+transition:color 0.3s ease;
+}
+
+.nav-links a::after{
+content:'';
+position:absolute;
+bottom:-4px;
+left:0;
+width:0;
+height:2px;
+background:var(--accent);
+transition:width 0.3s var(--ease-out);
 }
 
 .nav-links a:hover{
-color:#0b5ed7;
+color:var(--primary);
 }
 
-/* HERO */
+.nav-links a:hover::after{
+width:100%;
+}
 
+.nav-cta{
+padding:0.625rem 1.25rem;
+background:var(--primary);
+color:white;
+border-radius:8px;
+font-weight:500;
+font-size:0.875rem;
+text-decoration:none;
+transition:all 0.3s var(--ease-out);
+border:1px solid var(--primary);
+}
+
+.nav-cta:hover{
+background:transparent;
+color:var(--primary);
+transform:translateY(-1px);
+}
+
+.mobile-menu-btn{
+display:none;
+flex-direction:column;
+gap:4px;
+background:none;
+border:none;
+cursor:pointer;
+padding:0.5rem;
+}
+
+.mobile-menu-btn span{
+display:block;
+width:24px;
+height:2px;
+background:var(--primary);
+transition:all 0.3s var(--ease-out);
+}
+
+/* Hero Section */
 .hero{
-height:80vh;
+min-height:100vh;
 display:flex;
 align-items:center;
-padding:0 60px;
-background:linear-gradient(120deg,#f7f9fc,#eef2f7);
+padding:8rem 2rem 4rem;
+background:linear-gradient(135deg,#f0fdf4 0%,#ffffff 50%,#f8fafc 100%);
+position:relative;
+overflow:hidden;
 }
 
-.hero-text{
-max-width:600px;
+.hero::before{
+content:'';
+position:absolute;
+top:-50%;
+right:-20%;
+width:800px;
+height:800px;
+background:radial-gradient(circle,rgba(5,150,105,0.08) 0%,transparent 70%);
+border-radius:50%;
+animation:pulse 8s ease-in-out infinite;
+}
+
+@keyframes pulse{
+0%,100%{transform:scale(1);opacity:0.5;}
+50%{transform:scale(1.1);opacity:0.3;}
+}
+
+.hero-container{
+max-width:1400px;
+margin:0 auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:4rem;
+align-items:center;
+position:relative;
+z-index:1;
+}
+
+.hero-content{
+animation:fadeInUp 1s var(--ease-out);
+}
+
+@keyframes fadeInUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.hero-badge{
+display:inline-flex;
+align-items:center;
+gap:0.5rem;
+padding:0.5rem 1rem;
+background:rgba(5,150,105,0.1);
+color:var(--accent);
+border-radius:9999px;
+font-size:0.875rem;
+font-weight:600;
+margin-bottom:1.5rem;
+border:1px solid rgba(5,150,105,0.2);
 }
 
 .hero h1{
-font-size:46px;
-margin-bottom:20px;
+font-size:clamp(2.5rem,5vw,4rem);
+font-weight:700;
+color:var(--primary);
+margin-bottom:1.5rem;
+line-height:1.1;
 }
 
-.hero p{
-color:#666;
-line-height:1.6;
-margin-bottom:25px;
+.hero h1 .highlight{
+color:var(--accent);
+position:relative;
+display:inline-block;
+}
+
+.hero h1 .highlight::after{
+content:'';
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+height:8px;
+background:rgba(5,150,105,0.2);
+z-index:-1;
+transform:skewX(-12deg);
+}
+
+.hero-description{
+font-size:1.25rem;
+color:var(--text-secondary);
+max-width:540px;
+margin-bottom:2.5rem;
+line-height:1.7;
+}
+
+.hero-buttons{
+display:flex;
+gap:1rem;
+flex-wrap:wrap;
 }
 
 .btn{
-padding:14px 28px;
-background:#0b5ed7;
-color:#fff;
-border-radius:6px;
-text-decoration:none;
-font-weight:500;
-}
-
-.hero-img img{
-width:450px;
-border-radius:12px;
-}
-
-.hero-wrapper{
-display:flex;
-justify-content:space-between;
+display:inline-flex;
 align-items:center;
+gap:0.5rem;
+padding:1rem 2rem;
+border-radius:12px;
+font-weight:600;
+font-size:1rem;
+text-decoration:none;
+transition:all 0.3s var(--ease-out);
+cursor:pointer;
+border:none;
+}
+
+.btn-primary{
+background:var(--primary);
+color:white;
+box-shadow:0 4px 14px 0 rgba(15,23,42,0.39);
+}
+
+.btn-primary:hover{
+transform:translateY(-2px);
+box-shadow:0 6px 20px rgba(15,23,42,0.23);
+background:var(--primary-light);
+}
+
+.btn-secondary{
+background:white;
+color:var(--primary);
+border:1px solid var(--border);
+}
+
+.btn-secondary:hover{
+background:var(--bg-secondary);
+border-color:var(--text-secondary);
+transform:translateY(-2px);
+}
+
+.hero-visual{
+position:relative;
+animation:fadeInUp 1s var(--ease-out) 0.2s both;
+}
+
+.hero-image-wrapper{
+position:relative;
+border-radius:24px;
+overflow:hidden;
+box-shadow:var(--shadow-xl);
+transform:perspective(1000px) rotateY(-5deg) rotateX(5deg);
+transition:transform 0.6s var(--ease-out);
+}
+
+.hero-image-wrapper:hover{
+transform:perspective(1000px) rotateY(0deg) rotateX(0deg);
+}
+
+.hero-image-wrapper img{
 width:100%;
-}
-
-/* ABOUT */
-
-.about{
-padding:90px 60px;
-background:#fff;
-}
-
-.section-title{
-font-size:32px;
-margin-bottom:25px;
-}
-
-.about p{
-max-width:900px;
-line-height:1.7;
-color:#555;
-}
-
-/* PRODUCTS */
-
-.products{
-padding:90px 60px;
-background:#f7f9fc;
-}
-
-.product-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:35px;
-margin-top:40px;
-}
-
-.product-card{
-background:#fff;
-border-radius:10px;
-padding:20px;
-box-shadow:0 8px 20px rgba(0,0,0,0.05);
-transition:0.3s;
-}
-
-.product-card:hover{
-transform:translateY(-5px);
-}
-
-.product-card img{
-width:100%;
-height:200px;
+height:500px;
 object-fit:cover;
-border-radius:8px;
-margin-bottom:15px;
+display:block;
 }
 
-.product-card h3{
-font-size:18px;
-margin-bottom:8px;
+.hero-stats{
+position:absolute;
+bottom:-2rem;
+left:-2rem;
+background:white;
+padding:1.5rem;
+border-radius:16px;
+box-shadow:var(--shadow-lg);
+display:flex;
+gap:2rem;
+animation:float 6s ease-in-out infinite;
 }
 
-.product-card p{
-font-size:14px;
-color:#666;
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
 }
 
-/* DISTRIBUTION */
-
-.distribution{
-padding:90px 60px;
-background:#fff;
-}
-
-.dist-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:40px;
-margin-top:40px;
-}
-
-.dist-box{
-background:#f7f9fc;
-padding:30px;
-border-radius:10px;
-}
-
-/* INSTAGRAM */
-
-.instagram{
-padding:90px 60px;
-background:#f7f9fc;
+.stat{
 text-align:center;
 }
 
-.instagram a{
+.stat-value{
+font-size:1.875rem;
+font-weight:700;
+color:var(--primary);
+display:block;
+}
+
+.stat-label{
+font-size:0.875rem;
+color:var(--text-secondary);
+font-weight:500;
+}
+
+/* Section Styles */
+section{
+padding:6rem 2rem;
+}
+
+.section-header{
+max-width:1400px;
+margin:0 auto 4rem;
+text-align:center;
+}
+
+.section-label{
 display:inline-block;
-margin-top:20px;
-background:#e1306c;
-color:white;
-padding:14px 28px;
-border-radius:6px;
-text-decoration:none;
+padding:0.5rem 1rem;
+background:var(--bg-secondary);
+color:var(--accent);
+border-radius:9999px;
+font-size:0.875rem;
+font-weight:600;
+margin-bottom:1rem;
+text-transform:uppercase;
+letter-spacing:0.05em;
 }
 
-/* CONTACT */
-
-.contact{
-padding:90px 60px;
+.section-title{
+font-size:clamp(2rem,4vw,3rem);
+font-weight:700;
+color:var(--primary);
+margin-bottom:1rem;
 }
 
-.contact-box{
+.section-subtitle{
+font-size:1.25rem;
+color:var(--text-secondary);
 max-width:600px;
+margin:0 auto;
 }
 
-.contact input,
-.contact textarea{
+/* About Section */
+.about{
+background:var(--bg);
+position:relative;
+}
+
+.about-container{
+max-width:1400px;
+margin:0 auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:4rem;
+align-items:center;
+}
+
+.about-content{
+position:relative;
+}
+
+.about-text{
+font-size:1.125rem;
+color:var(--text-secondary);
+line-height:1.8;
+margin-bottom:2rem;
+}
+
+.about-features{
+display:grid;
+gap:1.5rem;
+}
+
+.feature{
+display:flex;
+gap:1rem;
+align-items:flex-start;
+}
+
+.feature-icon{
+width:48px;
+height:48px;
+background:var(--bg-secondary);
+border-radius:12px;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-shrink:0;
+font-size:1.5rem;
+}
+
+.feature-content h4{
+font-weight:600;
+color:var(--primary);
+margin-bottom:0.25rem;
+}
+
+.feature-content p{
+font-size:0.9375rem;
+color:var(--text-secondary);
+}
+
+.about-image{
+position:relative;
+}
+
+.about-image img{
 width:100%;
-padding:14px;
-margin-top:10px;
-border:1px solid #ddd;
-border-radius:6px;
+height:400px;
+object-fit:cover;
+border-radius:24px;
+box-shadow:var(--shadow-xl);
 }
 
-.contact button{
-margin-top:20px;
-padding:14px 28px;
-border:none;
-background:#0b5ed7;
+.experience-badge{
+position:absolute;
+bottom:-1.5rem;
+right:-1.5rem;
+background:var(--primary);
 color:white;
-border-radius:6px;
+padding:1.5rem;
+border-radius:16px;
+text-align:center;
+box-shadow:var(--shadow-lg);
+}
+
+.experience-badge .years{
+font-size:2.5rem;
+font-weight:700;
+display:block;
+line-height:1;
+}
+
+.experience-badge .text{
+font-size:0.875rem;
+opacity:0.9;
+}
+
+/* Products Section */
+.products{
+background:var(--bg-secondary);
+}
+
+.products-grid{
+max-width:1400px;
+margin:0 auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:2rem;
+}
+
+.product-card{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:var(--shadow);
+transition:all 0.4s var(--ease-out);
+border:1px solid var(--border);
+position:relative;
+}
+
+.product-card:hover{
+transform:translateY(-8px);
+box-shadow:var(--shadow-xl);
+border-color:transparent;
+}
+
+.product-image{
+position:relative;
+height:240px;
+overflow:hidden;
+}
+
+.product-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:transform 0.6s var(--ease-out);
+}
+
+.product-card:hover .product-image img{
+transform:scale(1.1);
+}
+
+.product-badge{
+position:absolute;
+top:1rem;
+left:1rem;
+background:white;
+padding:0.375rem 0.875rem;
+border-radius:9999px;
+font-size:0.75rem;
+font-weight:600;
+color:var(--accent);
+box-shadow:var(--shadow);
+}
+
+.product-info{
+padding:1.5rem;
+}
+
+.product-category{
+font-size:0.875rem;
+color:var(--accent);
+font-weight:600;
+margin-bottom:0.5rem;
+text-transform:uppercase;
+letter-spacing:0.05em;
+}
+
+.product-title{
+font-size:1.25rem;
+font-weight:600;
+color:var(--primary);
+margin-bottom:0.5rem;
+}
+
+.product-description{
+font-size:0.9375rem;
+color:var(--text-secondary);
+line-height:1.6;
+margin-bottom:1rem;
+}
+
+.product-footer{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding-top:1rem;
+border-top:1px solid var(--border);
+}
+
+.product-price{
+font-weight:700;
+color:var(--primary);
+font-size:1.125rem;
+}
+
+.product-link{
+color:var(--accent);
+font-weight:600;
+font-size:0.875rem;
+text-decoration:none;
+display:flex;
+align-items:center;
+gap:0.25rem;
+transition:gap 0.3s ease;
+}
+
+.product-link:hover{
+gap:0.5rem;
+}
+
+/* Distribution Section */
+.distribution{
+background:var(--bg);
+position:relative;
+}
+
+.distribution::before{
+content:'';
+position:absolute;
+inset:0;
+background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23059669' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+opacity:0.5;
+}
+
+.distribution-grid{
+max-width:1400px;
+margin:0 auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:2rem;
+position:relative;
+z-index:1;
+}
+
+.dist-card{
+background:white;
+padding:2.5rem;
+border-radius:20px;
+border:1px solid var(--border);
+transition:all 0.4s var(--ease-out);
+position:relative;
+overflow:hidden;
+}
+
+.dist-card::before{
+content:'';
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:4px;
+background:linear-gradient(90deg,var(--accent),var(--accent-light));
+transform:scaleX(0);
+transition:transform 0.4s var(--ease-out);
+}
+
+.dist-card:hover{
+transform:translateY(-4px);
+box-shadow:var(--shadow-lg);
+border-color:transparent;
+}
+
+.dist-card:hover::before{
+transform:scaleX(1);
+}
+
+.dist-icon{
+width:64px;
+height:64px;
+background:var(--bg-secondary);
+border-radius:16px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:2rem;
+margin-bottom:1.5rem;
+transition:all 0.3s var(--ease-out);
+}
+
+.dist-card:hover .dist-icon{
+background:var(--accent);
+transform:scale(1.1);
+}
+
+.dist-card:hover .dist-icon{
+filter:brightness(0) invert(1);
+}
+
+.dist-title{
+font-size:1.25rem;
+font-weight:600;
+color:var(--primary);
+margin-bottom:0.75rem;
+}
+
+.dist-description{
+color:var(--text-secondary);
+line-height:1.7;
+margin-bottom:1.5rem;
+}
+
+.dist-features{
+list-style:none;
+}
+
+.dist-features li{
+display:flex;
+align-items:center;
+gap:0.5rem;
+font-size:0.9375rem;
+color:var(--text-secondary);
+margin-bottom:0.5rem;
+}
+
+.dist-features li::before{
+content:'✓';
+color:var(--accent);
+font-weight:700;
+}
+
+/* Instagram Section */
+.instagram{
+background:linear-gradient(135deg,#fdf2f8 0%,#ffffff 100%);
+text-align:center;
+position:relative;
+overflow:hidden;
+}
+
+.instagram::before{
+content:'';
+position:absolute;
+inset:0;
+background:radial-gradient(circle at 50% 50%,rgba(225,48,108,0.05) 0%,transparent 70%);
+}
+
+.instagram-content{
+max-width:800px;
+margin:0 auto;
+position:relative;
+z-index:1;
+}
+
+.instagram-handle{
+font-size:1.5rem;
+font-weight:600;
+color:var(--primary);
+margin:1rem 0;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:0.5rem;
+}
+
+.instagram-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:1rem;
+margin:3rem 0;
+max-width:1000px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.insta-item{
+aspect-ratio:1;
+border-radius:12px;
+overflow:hidden;
+position:relative;
 cursor:pointer;
 }
 
-/* FOOTER */
+.insta-item img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:transform 0.4s var(--ease-out);
+}
 
-footer{
-background:#0b1220;
-color:#bbb;
-padding:40px 60px;
-margin-top:60px;
+.insta-item:hover img{
+transform:scale(1.1);
+}
+
+.insta-overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.5);
+display:flex;
+align-items:center;
+justify-content:center;
+opacity:0;
+transition:opacity 0.3s ease;
+}
+
+.insta-item:hover .insta-overlay{
+opacity:1;
+}
+
+.insta-icon{
+color:white;
+font-size:1.5rem;
+}
+
+.btn-instagram{
+display:inline-flex;
+align-items:center;
+gap:0.75rem;
+padding:1rem 2rem;
+background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+color:white;
+border-radius:12px;
+font-weight:600;
+text-decoration:none;
+transition:all 0.3s var(--ease-out);
+box-shadow:0 4px 14px 0 rgba(220,39,67,0.39);
+}
+
+.btn-instagram:hover{
+transform:translateY(-2px);
+box-shadow:0 6px 20px rgba(220,39,67,0.23);
+}
+
+/* Contact Section */
+.contact{
+background:var(--bg);
+}
+
+.contact-container{
+max-width:1400px;
+margin:0 auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:4rem;
+}
+
+.contact-info h3{
+font-size:2rem;
+font-weight:700;
+color:var(--primary);
+margin-bottom:1rem;
+}
+
+.contact-info > p{
+color:var(--text-secondary);
+margin-bottom:2rem;
+font-size:1.125rem;
+}
+
+.contact-methods{
+display:grid;
+gap:1.5rem;
+margin-bottom:2rem;
+}
+
+.contact-method{
+display:flex;
+align-items:center;
+gap:1rem;
+}
+
+.contact-icon{
+width:48px;
+height:48px;
+background:var(--bg-secondary);
+border-radius:12px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:1.25rem;
+}
+
+.contact-details h4{
+font-weight:600;
+color:var(--primary);
+margin-bottom:0.25rem;
+}
+
+.contact-details p{
+color:var(--text-secondary);
+font-size:0.9375rem;
+}
+
+.contact-form{
+background:white;
+padding:2.5rem;
+border-radius:20px;
+box-shadow:var(--shadow-lg);
+border:1px solid var(--border);
+}
+
+.form-group{
+margin-bottom:1.5rem;
+}
+
+.form-group label{
+display:block;
+font-weight:500;
+color:var(--primary);
+margin-bottom:0.5rem;
+font-size:0.9375rem;
+}
+
+.form-group input,
+.form-group textarea{
+width:100%;
+padding:0.875rem 1rem;
+border:1px solid var(--border);
+border-radius:10px;
+font-family:inherit;
+font-size:1rem;
+transition:all 0.3s ease;
+background:var(--bg-secondary);
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+outline:none;
+border-color:var(--accent);
+background:white;
+box-shadow:0 0 0 3px rgba(5,150,105,0.1);
+}
+
+.form-group textarea{
+resize:vertical;
+min-height:120px;
+}
+
+.submit-btn{
+width:100%;
+padding:1rem;
+background:var(--primary);
+color:white;
+border:none;
+border-radius:10px;
+font-weight:600;
+font-size:1rem;
+cursor:pointer;
+transition:all 0.3s var(--ease-out);
+}
+
+.submit-btn:hover{
+background:var(--primary-light);
+transform:translateY(-1px);
+box-shadow:var(--shadow);
+}
+
+/* Footer */
+.footer{
+background:var(--primary);
+color:white;
+padding:4rem 2rem 2rem;
+}
+
+.footer-container{
+max-width:1400px;
+margin:0 auto;
 }
 
 .footer-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:30px;
+grid-template-columns:2fr 1fr 1fr 1fr;
+gap:4rem;
+margin-bottom:3rem;
 }
 
-footer h4{
-color:#fff;
-margin-bottom:15px;
+.footer-brand{
+max-width:300px;
 }
 
-footer a{
-display:block;
-color:#bbb;
+.footer-logo{
+display:flex;
+align-items:center;
+gap:0.75rem;
+font-weight:700;
+font-size:1.25rem;
+margin-bottom:1rem;
+}
+
+.footer-logo img{
+height:40px;
+filter:brightness(0) invert(1);
+}
+
+.footer-description{
+color:#94a3b8;
+line-height:1.7;
+margin-bottom:1.5rem;
+}
+
+.footer-social{
+display:flex;
+gap:1rem;
+}
+
+.social-link{
+width:40px;
+height:40px;
+background:rgba(255,255,255,0.1);
+border-radius:10px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
 text-decoration:none;
-margin-bottom:6px;
+transition:all 0.3s ease;
 }
 
-footer a:hover{
-color:#fff;
+.social-link:hover{
+background:var(--accent);
+transform:translateY(-2px);
 }
 
-.copy{
+.footer-column h4{
+font-weight:600;
+margin-bottom:1.5rem;
+color:white;
+}
+
+.footer-links{
+list-style:none;
+}
+
+.footer-links li{
+margin-bottom:0.75rem;
+}
+
+.footer-links a{
+color:#94a3b8;
+text-decoration:none;
+transition:color 0.3s ease;
+font-size:0.9375rem;
+}
+
+.footer-links a:hover{
+color:white;
+}
+
+.footer-bottom{
+border-top:1px solid rgba(255,255,255,0.1);
+padding-top:2rem;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:1rem;
+}
+
+.footer-copyright{
+color:#64748b;
+font-size:0.875rem;
+}
+
+.footer-legal{
+display:flex;
+gap:2rem;
+}
+
+.footer-legal a{
+color:#64748b;
+text-decoration:none;
+font-size:0.875rem;
+transition:color 0.3s ease;
+}
+
+.footer-legal a:hover{
+color:white;
+}
+
+/* Responsive Design */
+@media(max-width:1024px){
+.hero-container{
+grid-template-columns:1fr;
 text-align:center;
-margin-top:30px;
-font-size:14px;
+gap:3rem;
 }
 
-@media(max-width:900px){
-
-.hero-wrapper{
-flex-direction:column;
-text-align:center;
-gap:30px;
+.hero-description{
+margin-left:auto;
+margin-right:auto;
 }
 
-.hero-img img{
-width:100%;
+.hero-buttons{
+justify-content:center;
 }
 
+.hero-visual{
+order:-1;
+}
+
+.hero-image-wrapper{
+max-width:600px;
+margin:0 auto;
+}
+
+.hero-image-wrapper img{
+height:400px;
+}
+
+.hero-stats{
+position:relative;
+bottom:auto;
+left:auto;
+margin-top:2rem;
+justify-content:center;
+}
+
+.about-container{
+grid-template-columns:1fr;
+gap:3rem;
+}
+
+.about-image{
+order:-1;
+}
+
+.experience-badge{
+right:1rem;
+}
+
+.distribution-grid{
+grid-template-columns:1fr;
+max-width:600px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.contact-container{
+grid-template-columns:1fr;
+gap:3rem;
+}
+
+.footer-grid{
+grid-template-columns:1fr 1fr;
+gap:2rem;
+}
+}
+
+@media(max-width:768px){
 .navbar{
-padding:18px 30px;
+padding:1rem;
+}
+
+.nav-links{
+display:none;
+}
+
+.mobile-menu-btn{
+display:flex;
+}
+
+section{
+padding:4rem 1.5rem;
 }
 
 .hero{
-padding:0 30px;
+padding:6rem 1.5rem 3rem;
+min-height:auto;
 }
 
-.products,
-.about,
-.distribution,
-.contact,
-.instagram{
-padding:70px 30px;
+.hero h1{
+font-size:2.25rem;
 }
 
+.hero-image-wrapper img{
+height:300px;
 }
 
+.hero-stats{
+flex-direction:column;
+gap:1rem;
+padding:1rem;
+}
+
+.products-grid{
+grid-template-columns:1fr;
+max-width:500px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.instagram-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.footer-grid{
+grid-template-columns:1fr;
+text-align:center;
+gap:2rem;
+}
+
+.footer-brand{
+max-width:100%;
+}
+
+.footer-social{
+justify-content:center;
+}
+
+.footer-bottom{
+flex-direction:column;
+text-align:center;
+}
+}
+
+/* Scroll Animations */
+.reveal{
+opacity:0;
+transform:translateY(30px);
+transition:all 0.8s var(--ease-out);
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+/* Loading Animation */
+.loading{
+position:fixed;
+inset:0;
+background:white;
+z-index:9999;
+display:flex;
+align-items:center;
+justify-content:center;
+transition:opacity 0.5s ease,visibility 0.5s ease;
+}
+
+.loading.hidden{
+opacity:0;
+visibility:hidden;
+}
+
+.spinner{
+width:40px;
+height:40px;
+border:3px solid var(--bg-secondary);
+border-top-color:var(--accent);
+border-radius:50%;
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+to{transform:rotate(360deg);}
+}
 </style>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-
-<div class="navbar">
-
-<div class="logo">
-<img src="https://raw.githubusercontent.com/jenderal45/oravita/main/img/2-removebg-preview.png" alt="Oravita Global Logo">
+<!-- Loading Screen -->
+<div class="loading" id="loading">
+<div class="spinner"></div>
 </div>
 
-<div class="nav-links">
-<a href="#">Home</a>
-<a href="#about">About</a>
-<a href="#products">Products</a>
-<a href="#distribution">Distribution</a>
-<a href="#contact">Contact</a>
-</div>
-
-</div>
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="hero-wrapper">
-
-<div class="hero-text">
-
-<h1>Food Distribution & Consumer Goods</h1>
-
-<p>
-Oravita Group merupakan perusahaan distribusi bahan pangan
-dan produk consumer goods yang menyediakan kebutuhan
-pokok berkualitas untuk masyarakat dan mitra bisnis di Indonesia.
-</p>
-
-<a class="btn" href="#products">Explore Products</a>
-
-</div>
-
-<div class="hero-img">
-<img src="https://images.unsplash.com/photo-1542838132-92c53300491e">
-</div>
-
-</div>
-
-</section>
-
-<!-- ABOUT -->
-
-<section class="about" id="about">
-
-<h2 class="section-title">About Oravita Group</h2>
-
-<p>
-
-Oravita Group adalah perusahaan yang bergerak di bidang
-distribusi produk pangan dan kebutuhan pokok.
-Kami berkomitmen menyediakan produk berkualitas
-dengan sistem distribusi yang efisien untuk memenuhi
-kebutuhan masyarakat, retail, dan mitra usaha.
-
-Produk yang kami distribusikan meliputi susu, minyak goreng,
-beras, telur ayam, ayam potong, sayuran segar,
-dan buah-buahan dengan standar kualitas terbaik.
-
-</p>
-
-</section>
-
-<!-- PRODUCTS -->
-
-<section class="products" id="products">
-
-<h2 class="section-title">Our Products</h2>
-
-<div class="product-grid">
-
-<div class="product-card">
-<img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074">
-<h3>Indomilk 125ml</h3>
-<p>Susu siap minum dengan kualitas terbaik untuk kebutuhan nutrisi harian.</p>
-</div>
-
-<div class="product-card">
-<img src="https://images.unsplash.com/photo-1604908176997-4316c288032b">
-<h3>Minyak Kita 1L</h3>
-<p>Minyak goreng berkualitas untuk kebutuhan rumah tangga dan usaha kuliner.</p>
-</div>
-
-<div class="product-card">
-<img src="https://images.unsplash.com/photo-1586201375761-83865001e31c">
-<h3>Beras</h3>
-<p>Beras pilihan dengan kualitas premium untuk kebutuhan konsumsi harian.</p>
-</div>
-
-<div class="product-card">
-<img src="https://images.unsplash.com/photo-1518492104633-130d0cc84637">
-<h3>Telur Ayam</h3>
-<p>Telur ayam segar dari peternakan terpercaya.</p>
-</div>
-
-<div class="product-card">
-<img src="https://images.unsplash.com/photo-1604503468506-a8da13d82791">
-<h3>Ayam Potong</h3>
-<p>Daging ayam segar dengan kualitas terbaik untuk konsumsi keluarga.</p>
-</div>
-
-<div class="product-card">
-<img src="https://images.unsplash.com/photo-1540420773420-3366772f4999">
-<h3>Sayur-Sayuran</h3>
-<p>Sayuran segar langsung dari petani pilihan.</p>
-</div>
-
-<div class="product-card">
-<img src="https://images.unsplash.com/photo-1574226516831-e1dff420e42e">
-<h3>Buah-Buahan</h3>
-<p>Buah segar berkualitas untuk pasar retail dan distribusi.</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- DISTRIBUTION -->
-
-<section class="distribution" id="distribution">
-
-<h2 class="section-title">Distribution Network</h2>
-
-<div class="dist-grid">
-
-<div class="dist-box">
-<h3>Retail & Grocery</h3>
-<p>
-Kami melayani distribusi untuk toko retail,
-grocery store, dan supermarket dengan sistem supply yang stabil.
-</p>
-</div>
-
-<div class="dist-box">
-<h3>Restaurant & Culinary</h3>
-<p>
-Produk kami juga disuplai untuk restoran,
-usaha kuliner, dan industri makanan.
-</p>
-</div>
-
-<div class="dist-box">
-<h3>Wholesale Partner</h3>
-<p>
-Kami membuka kerjasama distribusi dengan
-mitra grosir dan distributor regional.
-</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- INSTAGRAM -->
-
-<section class="instagram">
-
-<h2 class="section-title">Follow Our Instagram</h2>
-
-<p>Update terbaru produk dan aktivitas Oravita Global.</p>
-
-<a href="https://www.instagram.com/oravitagroup?igsh=eGJlcmtvZTZjazNm" target="_blank">
-Visit Instagram
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+<div class="nav-container">
+<a href="#" class="logo">
+<img src="https://raw.githubusercontent.com/jenderal45/oravita/main/img/2-removebg-preview.png" alt="Oravita">
+<span>Oravita Group</span>
 </a>
-
-</section>
-
-<!-- CONTACT -->
-
-<section class="contact" id="contact">
-
-<h2 class="section-title">Contact Us</h2>
-
-<div class="contact-box">
-
-<input type="text" placeholder="Nama">
-
-<input type="email" placeholder="Email">
-
-<textarea rows="5" placeholder="Pesan"></textarea>
-
-<button>Kirim Pesan</button>
-
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#products">Products</a></li>
+<li><a href="#distribution">Distribution</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<a href="#contact" class="nav-cta">Get in Touch</a>
+<button class="mobile-menu-btn" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+</button>
 </div>
+</nav>
 
-</section>
-
-<!-- FOOTER -->
-
-<footer>
-
-<div class="footer-grid">
-
-<div>
-<h4>Oravita Global</h4>
-<p>
-Food Distribution & Consumer Goods
+<!-- Hero Section -->
+<section class="hero" id="home">
+<div class="hero-container">
+<div class="hero-content">
+<div class="hero-badge">
+<span>✓</span>
+Trusted Distribution Partner
+</div>
+<h1>
+Premium Food Distribution for <span class="highlight">Modern Indonesia</span>
+</h1>
+<p class="hero-description">
+Oravita Group delivers excellence in food distribution and consumer goods supply chain management. We bridge the gap between quality producers and businesses nationwide.
 </p>
+<div class="hero-buttons">
+<a href="#products" class="btn btn-primary">
+Explore Products
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+</a>
+<a href="#about" class="btn btn-secondary">Learn More</a>
+</div>
+</div>
+<div class="hero-visual">
+<div class="hero-image-wrapper">
+<img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&q=80" alt="Fresh produce distribution">
+</div>
+<div class="hero-stats">
+<div class="stat">
+<span class="stat-value">500+</span>
+<span class="stat-label">Partners</span>
+</div>
+<div class="stat">
+<span class="stat-value">50K+</span>
+<span class="stat-label">Tons/Year</span>
+</div>
+<div class="stat">
+<span class="stat-value">15+</span>
+<span class="stat-label">Years Exp</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- About Section -->
+<section class="about" id="about">
+<div class="about-container">
+<div class="about-content reveal">
+<span class="section-label">About Us</span>
+<h2 class="section-title">Building Indonesia's Food Future</h2>
+<p class="about-text">
+Oravita Group stands at the forefront of Indonesia's food distribution industry. With an unwavering commitment to quality and efficiency, we ensure that essential goods reach every corner of the archipelago—from bustling urban centers to remote communities.
+</p>
+<div class="about-features">
+<div class="feature">
+<div class="feature-icon">🌾</div>
+<div class="feature-content">
+<h4>Quality Sourcing</h4>
+<p>Direct partnerships with certified farms and producers ensuring traceability and freshness.</p>
+</div>
+</div>
+<div class="feature">
+<div class="feature-icon">🚛</div>
+<div class="feature-content">
+<h4>Smart Logistics</h4>
+<p>Temperature-controlled fleet and real-time tracking for optimal supply chain management.</p>
+</div>
+</div>
+<div class="feature">
+<div class="feature-icon">✓</div>
+<div class="feature-content">
+<h4>Quality Assurance</h4>
+<p>Rigorous testing and certification processes meeting international food safety standards.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="about-image reveal">
+<img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80" alt="Distribution warehouse">
+<div class="experience-badge">
+<span class="years">15+</span>
+<span class="text">Years of<br>Excellence</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Products Section -->
+<section class="products" id="products">
+<div class="section-header reveal">
+<span class="section-label">Our Products</span>
+<h2 class="section-title">Premium Quality Essentials</h2>
+<p class="section-subtitle">Carefully curated selection of daily necessities sourced from trusted producers</p>
+</div>
+<div class="products-grid">
+<div class="product-card reveal">
+<div class="product-image">
+<img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=600&q=80" alt="Indomilk">
+<span class="product-badge">Best Seller</span>
+</div>
+<div class="product-info">
+<span class="product-category">Dairy</span>
+<h3 class="product-title">Indomilk 125ml</h3>
+<p class="product-description">Premium ready-to-drink milk with optimal nutrition for daily consumption. Perfect for retail and institutional distribution.</p>
+<div class="product-footer">
+<span class="product-price">Rp 2,500</span>
+<a href="#" class="product-link">Details →</a>
+</div>
+</div>
 </div>
 
-<div>
+<div class="product-card reveal">
+<div class="product-image">
+<img src="https://images.unsplash.com/photo-1604908176997-4316c288032b?w=600&q=80" alt="Cooking Oil">
+</div>
+<div class="product-info">
+<span class="product-category">Cooking Essentials</span>
+<h3 class="product-title">Minyak Kita 1L</h3>
+<p class="product-description">High-quality cooking oil designed for both household and commercial culinary applications. Consistent quality guaranteed.</p>
+<div class="product-footer">
+<span class="product-price">Rp 18,000</span>
+<a href="#" class="product-link">Details →</a>
+</div>
+</div>
+</div>
+
+<div class="product-card reveal">
+<div class="product-image">
+<img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&q=80" alt="Rice">
+<span class="product-badge">Premium</span>
+</div>
+<div class="product-info">
+<span class="product-category">Staples</span>
+<h3 class="product-title">Beras Premium</h3>
+<p class="product-description">Selected premium rice varieties sourced directly from Indonesia's best rice-producing regions. Superior grain quality.</p>
+<div class="product-footer">
+<span class="product-price">Rp 65,000</span>
+<a href="#" class="product-link">Details →</a>
+</div>
+</div>
+</div>
+
+<div class="product-card reveal">
+<div class="product-image">
+<img src="https://images.unsplash.com/photo-1518492104633-130d0cc84637?w=600&q=80" alt="Eggs">
+</div>
+<div class="product-info">
+<span class="product-category">Protein</span>
+<h3 class="product-title">Telur Ayam Segar</h3>
+<p class="product-description">Farm-fresh eggs from certified poultry farms. Strict quality control ensures only grade-A eggs reach our customers.</p>
+<div class="product-footer">
+<span class="product-price">Rp 28,000/kg</span>
+<a href="#" class="product-link">Details →</a>
+</div>
+</div>
+</div>
+
+<div class="product-card reveal">
+<div class="product-image">
+<img src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=600&q=80" alt="Chicken">
+<span class="product-badge">Fresh Daily</span>
+</div>
+<div class="product-info">
+<span class="product-category">Poultry</span>
+<h3 class="product-title">Ayam Potong Segar</h3>
+<p class="product-description">Fresh whole chicken processed under strict hygiene standards. Cold chain maintained from farm to delivery.</p>
+<div class="product-footer">
+<span class="product-price">Rp 45,000/kg</span>
+<a href="#" class="product-link">Details →</a>
+</div>
+</div>
+</div>
+
+<div class="product-card reveal">
+<div class="product-image">
+<img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&q=80" alt="Vegetables">
+</div>
+<div class="product-info">
+<span class="product-category">Produce</span>
+<h3 class="product-title">Sayuran Segar</h3>
+<p class="product-description">Daily-harvested vegetables from partner farms. Wide variety of leafy greens and seasonal produce available.</p>
+<div class="product-footer">
+<span class="product-price">Market Price</span>
+<a href="#" class="product-link">Details →</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Distribution Section -->
+<section class="distribution" id="distribution">
+<div class="section-header reveal">
+<span class="section-label">Distribution Network</span>
+<h2 class="section-title">Comprehensive Supply Solutions</h2>
+<p class="section-subtitle">Multi-channel distribution infrastructure serving diverse business needs</p>
+</div>
+<div class="distribution-grid">
+<div class="dist-card reveal">
+<div class="dist-icon">🏪</div>
+<h3 class="dist-title">Retail & Grocery</h3>
+<p class="dist-description">End-to-end supply chain solutions for supermarkets, convenience stores, and traditional markets with just-in-time delivery systems.</p>
+<ul class="dist-features">
+<li>Daily replenishment</li>
+<li>Inventory management</li>
+<li>Promotional support</li>
+</ul>
+</div>
+
+<div class="dist-card reveal">
+<div class="dist-icon">🍽️</div>
+<h3 class="dist-title">Food Service</h3>
+<p class="dist-description">Specialized distribution for restaurants, hotels, catering services, and institutional kitchens requiring consistent bulk supply.</p>
+<ul class="dist-features">
+<li>Volume pricing</li>
+<li>Scheduled deliveries</li>
+<li>Custom cuts & packing</li>
+</ul>
+</div>
+
+<div class="dist-card reveal">
+<div class="dist-icon">🏭</div>
+<h3 class="dist-title">Wholesale Partnership</h3>
+<p class="dist-description">Strategic alliances with regional distributors and wholesalers to expand market reach across the Indonesian archipelago.</p>
+<ul class="dist-features">
+<li>Territory protection</li>
+<li>Marketing collaboration</li>
+<li>Credit facilities</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- Instagram Section -->
+<section class="instagram">
+<div class="instagram-content reveal">
+<span class="section-label">Social Media</span>
+<h2 class="section-title">Follow Our Journey</h2>
+<p class="section-subtitle">Stay updated with our latest products, behind-the-scenes, and industry insights</p>
+<div class="instagram-handle">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+@oravitagroup
+</div>
+<div class="instagram-grid">
+<div class="insta-item">
+<img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=400&q=80" alt="Instagram 1">
+<div class="insta-overlay">
+<span class="insta-icon">♥</span>
+</div>
+</div>
+<div class="insta-item">
+<img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=400&q=80" alt="Instagram 2">
+<div class="insta-overlay">
+<span class="insta-icon">♥</span>
+</div>
+</div>
+<div class="insta-item">
+<img src="https://images.unsplash.com/photo-1604908176997-4316c288032b?w=400&q=80" alt="Instagram 3">
+<div class="insta-overlay">
+<span class="insta-icon">♥</span>
+</div>
+</div>
+<div class="insta-item">
+<img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400&q=80" alt="Instagram 4">
+<div class="insta-overlay">
+<span class="insta-icon">♥</span>
+</div>
+</div>
+</div>
+<a href="https://www.instagram.com/oravitagroup" target="_blank" class="btn-instagram">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+Follow on Instagram
+</a>
+</div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+<div class="contact-container">
+<div class="contact-info reveal">
+<span class="section-label">Contact Us</span>
+<h3>Let's Start a Partnership</h3>
+<p>Ready to streamline your supply chain? Get in touch with our team for customized distribution solutions.</p>
+<div class="contact-methods">
+<div class="contact-method">
+<div class="contact-icon">📍</div>
+<div class="contact-details">
+<h4>Headquarters</h4>
+<p>Jl. Distribution Center No. 123<br>Jakarta, Indonesia 12345</p>
+</div>
+</div>
+<div class="contact-method">
+<div class="contact-icon">📞</div>
+<div class="contact-details">
+<h4>Phone</h4>
+<p>+62 21 1234 5678<br>Mon-Fri, 8am-6pm WIB</p>
+</div>
+</div>
+<div class="contact-method">
+<div class="contact-icon">✉️</div>
+<div class="contact-details">
+<h4>Email</h4>
+<p>partnership@oravita.co.id<br>support@oravita.co.id</p>
+</div>
+</div>
+</div>
+</div>
+<div class="contact-form reveal">
+<form onsubmit="handleSubmit(event)">
+<div class="form-group">
+<label for="name">Full Name</label>
+<input type="text" id="name" placeholder="John Doe" required>
+</div>
+<div class="form-group">
+<label for="email">Email Address</label>
+<input type="email" id="email" placeholder="john@company.com" required>
+</div>
+<div class="form-group">
+<label for="company">Company Name</label>
+<input type="text" id="company" placeholder="Your Company">
+</div>
+<div class="form-group">
+<label for="message">Message</label>
+<textarea id="message" placeholder="Tell us about your distribution needs..." required></textarea>
+</div>
+<button type="submit" class="submit-btn">
+Send Message
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+</button>
+</form>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="footer-container">
+<div class="footer-grid">
+<div class="footer-brand">
+<div class="footer-logo">
+<img src="https://raw.githubusercontent.com/jenderal45/oravita/main/img/2-removebg-preview.png" alt="Oravita">
+<span>Oravita Group</span>
+</div>
+<p class="footer-description">
+Leading food distribution company in Indonesia, committed to delivering quality products and exceptional service to businesses nationwide.
+</p>
+<div class="footer-social">
+<a href="https://instagram.com/oravitagroup" class="social-link" target="_blank">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+</a>
+<a href="#" class="social-link">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+</a>
+<a href="#" class="social-link">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+</a>
+</div>
+</div>
+<div class="footer-column">
 <h4>Company</h4>
-<a href="#">About</a>
-<a href="#">Products</a>
-<a href="#">Distribution</a>
+<ul class="footer-links">
+<li><a href="#about">About Us</a></li>
+<li><a href="#products">Products</a></li>
+<li><a href="#distribution">Distribution</a></li>
+<li><a href="#">Careers</a></li>
+</ul>
 </div>
-
-<div>
-<h4>Social</h4>
-<a href="https://www.instagram.com/oravitagroup?igsh=eGJlcmtvZTZjazNm">Instagram</a>
+<div class="footer-column">
+<h4>Support</h4>
+<ul class="footer-links">
+<li><a href="#contact">Contact</a></li>
+<li><a href="#">FAQ</a></li>
+<li><a href="#">Shipping</a></li>
+<li><a href="#">Returns</a></li>
+</ul>
 </div>
-
+<div class="footer-column">
+<h4>Legal</h4>
+<ul class="footer-links">
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Terms of Service</a></li>
+<li><a href="#">Cookie Policy</a></li>
+</ul>
 </div>
-
-<div class="copy">
-© 2026 Oravita Group member of Astria. All rights reserved.
 </div>
-
+<div class="footer-bottom">
+<p class="footer-copyright">© 2026 Oravita Group. All rights reserved. Member of Astria Holdings.</p>
+<div class="footer-legal">
+<a href="#">Privacy</a>
+<a href="#">Terms</a>
+<a href="#">Sitemap</a>
+</div>
+</div>
+</div>
 </footer>
+
+<script>
+// Loading Screen
+window.addEventListener('load',()=>{
+setTimeout(()=>{
+document.getElementById('loading').classList.add('hidden');
+},500);
+});
+
+// Navbar Scroll Effect
+window.addEventListener('scroll',()=>{
+const navbar=document.getElementById('navbar');
+if(window.scrollY>50){
+navbar.classList.add('scrolled');
+}else{
+navbar.classList.remove('scrolled');
+}
+});
+
+// Scroll Reveal Animation
+const observerOptions={
+threshold:0.1,
+rootMargin:'0px 0px -50px 0px'
+};
+
+const observer=new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('active');
+}
+});
+},observerOptions);
+
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+// Form Handler
+function handleSubmit(e){
+e.preventDefault();
+const btn=e.target.querySelector('.submit-btn');
+const originalText=btn.innerHTML;
+btn.innerHTML='Sending...';
+btn.disabled=true;
+
+setTimeout(()=>{
+btn.innerHTML='Message Sent! ✓';
+btn.style.background='var(--accent)';
+setTimeout(()=>{
+btn.innerHTML=originalText;
+btn.disabled=false;
+btn.style.background='';
+e.target.reset();
+},2000);
+},1500);
+}
+
+// Mobile Menu Toggle
+function toggleMenu(){
+const nav=document.querySelector('.nav-links');
+nav.style.display=nav.style.display==='flex'?'none':'flex';
+if(nav.style.display==='flex'){
+nav.style.position='absolute';
+nav.style.top='100%';
+nav.style.left='0';
+nav.style.right='0';
+nav.style.background='white';
+nav.style.flexDirection='column';
+nav.style.padding='2rem';
+nav.style.boxShadow='var(--shadow-lg)';
+nav.style.gap='1.5rem';
+}
+}
+
+// Smooth Scroll for Anchor Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+anchor.addEventListener('click',function(e){
+e.preventDefault();
+const target=document.querySelector(this.getAttribute('href'));
+if(target){
+target.scrollIntoView({
+behavior:'smooth',
+block:'start'
+});
+}
+});
+});
+</script>
 
 </body>
 </html>
